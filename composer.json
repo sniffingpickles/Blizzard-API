@@ -1,0 +1,32 @@
+{
+    "name": "ardralik/blizzard-api",
+    "type": "library",
+    "description": "A PHP-written library to access Blizzard APIs",
+    "keywords": ["php", "api", "blizzard"],
+    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/Ardralik/Blizzard-API",
+    "readme": "https://github.com/Ardralik/Blizzard-API/blob/master/README.md",
+    
+    "authors": [
+        {
+            "name": "Ardralik",
+            "email": "ardralik@gmail.com",
+            "role": "Developer"
+        }
+    ],
+
+    "support": {
+        "issues": "https://github.com/Ardralik/Blizzard-API/issues",
+        "chat": "https://discord.gg/NMv9xR8"
+    },
+
+    "require": {
+        "php": ">=7.1"
+    },
+    
+    "autoload": {
+    	"psr-4": {
+    		"Ardralik\\API\\Blizzard\\": "src/"
+    	}
+    }
+}
