@@ -19,6 +19,15 @@ class WoW{
 	*/
 	public function get(string $ressource, array $data = []): string{
 		$params = [];
+
+		if(array_key_exists("fields", $data)):
+			$params["fields"] = implode(",", $data["fields"]);
+		endif;
+
+		if(array_key_exists("name", $data)):
+			$data["name"] = urlencode($data["name"]);
+		endif;
+
 		$params["locale"] = $this->client->getLocale();
 
 		switch($ressource):
@@ -39,16 +48,10 @@ class WoW{
 				break;
 
 			case "character":
-				if(isset($data["fields"])):
-					$params["fields"] = implode(",", $data["fields"]);
-				endif;
 				$url = "wow/character/". $this->formatRealm($data["realm"]) ."/". strtolower($data["name"]) ."?". http_build_query($params);
 				break;
 
 			case "guild":
-				if(isset($data["fields"])):
-					$params["fields"] = implode(",", $data["fields"]);
-				endif;
 				$url = "wow/guild/". $this->formatRealm($data["realm"]) ."/". strtolower($data["name"]) ."?". http_build_query($params);
 				break;
 
@@ -67,7 +70,7 @@ class WoW{
 			case "pet":
 				$url = "wow/pet/";
 
-				if(isset($data["details"])):
+				if(array_key_exists("details", $data)):
 					switch($data["details"]):
 						case "ability":
 							$url .= "ability/". $data["id"];
@@ -165,7 +168,7 @@ class WoW{
 
 				break;
 		endswitch;
-
+		
 		$data = [
 			CURLOPT_URL => $this->client->getRegionsHostLocales()[$this->client->getRegion()]["host"]["api"] . $url,
 			CURLOPT_CUSTOMREQUEST => "GET",
