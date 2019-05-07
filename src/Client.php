@@ -211,7 +211,12 @@ class Client{
 
 		if(false === $result || curl_getinfo($curl, CURLINFO_HTTP_CODE) !== 200):
 			curl_close($curl);
-			throw new BlizzardAPIException("An error has occured when retrieving data.");
+			$result = json_decode($result);
+			if(property_exists($result, "status")):
+				if($result->status === "nok"):
+					throw new BlizzardAPIException($result->reason ?? "An error has occured when retrieving data.");
+				endif;
+			endif;
 		endif;
 		
 		curl_close($curl);
