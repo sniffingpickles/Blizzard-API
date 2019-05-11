@@ -264,6 +264,251 @@ Here is `data` structure depending on `ressource`:
 				<li>pet_types</li>
 		</td>
 	</tr>
+	<tr>
+		<td>
+			gameData
+		</td>
+		<td>
+			data (string)
+		</td>
+		<td>
+			Available balues :
+			<ul>
+				<li>achievementCategory</li>
+				<li>achievement</li>
+				<li>achievementMedia</li>
+				<li>connectedRealm</li>
+				<li>creatureFamily</li>
+				<li>creatureType</li>
+				<li>creature</li>
+				<li>creatureDisplayMedia</li>
+				<li>creatureFamilyMedia</li>
+				<li>guild</li>
+				<li>guildAchievements</li>
+				<li>guildRoster</li>
+				<li>guildCrest</li>
+				<li>guildCrestBorder</li>
+				<li>guildCrestEmblem</li>
+				<li>mythicAffix</li>
+				<li>mythicRaid</li>
+				<li>mythicKeystone</li>
+				<li>mythicKeystoneDungeon</li>
+				<li>mythicKeystonePeriod</li>
+				<li>mythicKeystoneSeason</li>
+				<li>mythicLeaderboard</li>
+				<li>pet</li>
+				<li>class</li>
+				<li>classPvP</li>
+				<li>specialization</li>
+				<li>powerType</li>
+				<li>PvPSeason</li>
+				<li>PvPLeaderboard</li>
+				<li>PvPRewards</li>
+				<li>PvPTier</li>
+				<li>PvPTierMedia</li>
+				<li>realms</li>
+				<li>region</li>
+				<li>token</li>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+Additional values when using `gameData`:
+<table>
+	<tr>
+		<th>'data' keys</th>
+		<th>Value</th>
+		<th>Optional/Required</th>
+	</tr>
+	<tr>
+		<td>achievementCategory</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>achievement</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>achievementMedia</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>connectedRealm</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>creatureFamily</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>creatureType</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>creature</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>creatureDisplayMedia</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>creatureFamilyMedia</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td rowspan="2">guild</td>
+		<td>realm (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>name (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td rowspan="2">guildAchievements</td>
+		<td>realm (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>name (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td rowspan="2">guildRoster</td>
+		<td>realm (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>name (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>guildCrestBorder</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>guildCrestEmblem</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>mythicAffix</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td rowspan="2">mythicRaid</td>
+		<td>raid (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>faction (string)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>mythicKeystoneDungeon</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>mythicKeystonePeriod</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>mythicKeystoneSeason</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td rowspan="3">mythicLeaderboard</td>
+		<td>id (int)</td>
+		<td>Required (connected-realm ID)</td>
+	</tr>
+	<tr>
+		<td>dungeon (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>period (int)</td>
+		<td>Required (only if 'dungeon' is used)</td>
+	</tr>
+	<tr>
+		<td>pet</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>class</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>classPvP</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>specialization</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>powerType</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>PvPSeason</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td rowspan="2">PvPLeaderboard</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>bracket (string)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>PvPRewards</td>
+		<td>id (int)</td>
+		<td>Required</td>
+	</tr>
+	<tr>
+		<td>PvPTier</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>PvPTierMedia</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>realms</td>
+		<td>slug (string)</td>
+		<td>Optional</td>
+	</tr>
+	<tr>
+		<td>region</td>
+		<td>id (int)</td>
+		<td>Optional</td>
+	</tr>
 </table>
 
 ## *Diablo III* API

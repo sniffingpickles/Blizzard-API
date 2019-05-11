@@ -56,7 +56,7 @@ class Diablo{
 				break;
 		endswitch;
 
-		$data = [
+		$curl = [
 			CURLOPT_URL => $this->client->getRegionsHostLocales()[$this->client->getRegion()]["host"]["api"] . $url,
 			CURLOPT_CUSTOMREQUEST => "GET",
 			CURLOPT_HTTPHEADER => [
@@ -64,6 +64,6 @@ class Diablo{
 			]
 		];
 		
-		return $this->client->request($data);
+		return $this->client->request($curl);
 	}
 }
