@@ -317,8 +317,8 @@ Here is `data` structure depending on `ressource`:
 Additional values when using `gameData`:
 <table>
 	<tr>
-		<th>'data' keys</th>
-		<th>Value</th>
+		<th>'gameData' value</th>
+		<th>'data' key</th>
 		<th>Optional/Required</th>
 	</tr>
 	<tr>
