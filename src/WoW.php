@@ -44,7 +44,7 @@ class WoW{
 				break;
 
 			case "challenge":
-				$url = "wow/challenge/". ($data["realm"] ? $this->formatRealm($data["realm"]) : "region") ."?". http_build_query($params);
+				$url = "wow/challenge/". (isset($data["realm"]) ? $this->formatRealm($data["realm"]) : "region") ."?". http_build_query($params);
 				break;
 
 			case "character":
